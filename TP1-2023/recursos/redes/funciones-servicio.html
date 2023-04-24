@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Trabajo Practico 1 Servidor Web Simplificad"/>
+        <meta name="robots" content="follow"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Funciones del Servicio</title>
+        <link rel="stylesheet" href="./css/index-styles.css">
+    </head>
+
+    <body>
+        
+        <h1 class="title">Funciones del Servicio</h1>
+       
+        <div class="functions-indice">
+            <h2>Tabla de funciones</h2>
+            <ul>
+                <li>Request readRequest (Host cliente, FILE *f)</li>
+                <li>CR_returns checkRequest (Request peticion_cliente)</li>
+                <li>void sendRequest (Host cliente, CR_returns respuesta, char metodo[10])</li>
+                <li>void sendFile (int cliente_socket, CR_returns respuesta, char metodo[10])</li>
+                <li>void httpHeader (int cliente_socket,char *tipo_mime, int tamanio, time_t ultima_actualizacion, int codigo_respuesta, char *msj_codigo)</li>
+                <li>char *get_mime_type (char *name)</li>
+            </ul>
+        </div>
+
+        <div class="functions">
+            <h3>Request readRequest (Host cliente, FILE *f)</h3>
+            <p>
+                Obtiene la línea de solicitud y la organiza en una estructura de tipo Request separando método, recurso y protocolo. 
+            </p>
+            <p>
+                <b>@Parametro cliente:</b> contiene la estructura y el socket del cliente.
+            </p>
+            <p>
+                <b>@Parametro *f:</b> referencia a archivo donde obtendremos los datos para las variables método, recurso y protocolo.
+            </p>
+            <p>
+                <b>@Salida:</b> Estructura Request con sus valores correspondientes cargados.
+            </p>
+        </div>
+
+        <div class="functions">
+            <h3>CR_returns checkRequest (Request peticion_cliente)</h3>
+            <p>
+                Analiza la petición del cliente y este arma la respuesta que se le debe devolver según las distintas condiciones que podemos tener con la petición del cliente. 
+            </p>
+            <p>
+                <b>@Paramtro peticion_cliente:</b> utilizamos los datos guardados en ella para analizar si la petición está armada correctamente.
+            </p>
+            <p>
+                <b>@Salida:</b> devuelve la respuesta armada que debe devolverse a la petición del cliente.
+            </p>
+        </div>
+        
+        <div class="functions">
+            <h3>void sendRequest (Host cliente, CR_returns respuesta, char metodo[10])</h3>
+            <p>
+                El procedimiento se encarga de obtener el estado del archivo/objeto requerido en la petición, abrirlo solo para lectura, llamar a la función sendFile para que lo envíe al cliente, y por último cerrar dicho archivo. 
+            </p>
+            <p>
+                <b>@Paramtro cliente:</b> estructura del cliente donde usaremos el file descriptor para enviarle la respuesta.
+            </p>
+            <p>
+                <b>@Paramtro respuesta:</b> es la respuesta armada que se enviará al cliente.
+            </p>
+            <p>
+                <b>@Paramtro metodo:</b> método pedido por el cliente, según este la respuesta tendrá un comportamiento diferente.
+    
+            </p>
+            <p>
+                <b>@Salida:</b> al tratarse de un procedimiento, no genera salida.
+            </p>
+        </div>
+
+        <div class="functions">
+            <h3>void sendFile (int cliente_socket, CR_returns respuesta, char metodo[10])</h3>
+            <p>
+                Determina el tamaño del archivo, crea la cabecera del header de respuesta y envía el archivo al cliente.
+            </p>
+            <p>
+                <b>@Parametro cliente_socket:</b> Socket del cliente a enviar el archivo.
+            </p>
+            <p>
+                <b>@Parametro respuesta:</b> Estructura donde están guardados los datos del requisito validado anteriormente que se enviará.
+            </p>
+            <p>
+                <b>@Parametro metodo[10]:</b> Método de solicitud (POST, GET, HEAD, etc), se obtiene de la estructura Request.
+            </p>
+            <p>
+                <b>@Salida:</b> No tiene.
+            </p>
+        </div>
+
+        <div class="functions">
+            <h3>void httpHeader (int cliente_socket,char *tipo_mime, int tamanio, time_t ultima_actualizacion, int codigo_respuesta, char *msj_codigo)</h3>
+            <p>
+                A Través de la información por parámetros, se encarga de armar la cabecera correcta a devolver al file descriptor del cliente cada vez que arma una línea este se la envía al cliente.
+            </p>
+            <p>
+                <b>@Parametro cliente_socket:</b> el file descriptor del cliente  al cual se enviaran la cabecera.
+            </p>
+            <p>
+                <b>@Parametro tipo_mime:</b> el tipo mime del recurso que solicitó el cliente.
+            </p>
+            <p>
+                <b>@Parametro tamanio:</b> el tamaño del recurso en bytes solicitado por el cliente.
+            </p>
+            <p>
+                <b>@Parametro ultima_actualizacion:</b> la fecha y hora de la última modificación al recurso solicitado.
+            </p>
+            <p>
+                <b>@Parametro codigo_respuesta:</b> el código de respuesta de la petición del cliente.
+            </p>
+            <p>
+                <b>@Parametro msj_codigo:</b> mensaje correspondiente al código de respuesta.
+            </p>
+            <p>
+                <b>@Salida:</b> No tiene.
+            </p>
+        </div>
+        
+        <div class="functions">
+            <h3>char *get_mime_type (char *name)</h3>
+            <p>
+                Realiza un corte de la cadena a la ruta del archivo obteniendo el tipo de dato del archivo y se compara con los tipos de datos que acepta el servidor para obtener el tipo MIME.
+            </p>
+            <p>
+                <b>@Parametro *name:</b> recibe por parámetro la ruta a la dirección del archivo.
+            </p>
+            <p>
+                <b>@Salida:</b> Función que devuelve una cadena de caracteres con el tipo MIME (tipos de datos de archivos).
+            </p>
+        </div>
+
+        <div class="vinculos">
+            <hr>
+            <h2> Contenidos relacionados </h2>
+            <ul>
+                <li> <a href="./index.html">Pagina de inicio</a> </li>
+                <li> <a href="./funciones-servidor.html">Funciones del servidor</a> </li>
+                <li> <a href="./estructuras-includes.html">Estructuras, Includes y define</a> </li>
+            </ul>
+        </div>
+
+    </body>
+
+</html>

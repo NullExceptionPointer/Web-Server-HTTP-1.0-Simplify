@@ -1,0 +1,9 @@
+El internet es una red global de computadoras interconectadas y dispositivos electrónicos que se comunican entre sí 
+mediante protocolos estándar de comunicación. En términos simples, el internet es una red de redes, que conecta a millones 
+de usuarios en todo el mundo y les permite intercambiar información, compartir recursos, comunicarse y realizar transacciones 
+en línea.
+
+El internet fue desarrollado inicialmente como una herramienta para la comunicación militar y académica, pero con el tiempo 
+se ha convertido en una plataforma fundamental para el comercio, la educación, el entretenimiento, la investigación y la 
+colaboración. El internet ha transformado la forma en que interactuamos con la información y entre nosotros, permitiéndonos 
+conectarnos y colaborar con personas de todo el mundo de manera instantánea y eficiente.

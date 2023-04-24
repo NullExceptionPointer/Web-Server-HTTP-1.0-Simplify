@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Trabajo Practico 1 Servidor Web Simplificad"/>
+        <meta name="robots" content="follow"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Trabajo Practico 1 Servidor Web Simplificad</title>
+        <link rel="stylesheet" href="./css/index-styles.css">
+    </head>
+
+    <body>
+        
+        <div class="content-logo">
+            <picture>
+                <img src="./imagenes/udc-logo.png" alt="Logo Universidad Del Chubut"
+                title="Logo Universidad Del Chubut">
+            </picture>
+        </div>
+        
+        <div class="container-informacion">
+            <div class="content-informacion">
+                <h2>Redes y Seguridad Informatica</h2>
+                <h2>2do año Primer cuatrimestre 2023</h2>
+                <h2>Trabajo Practico 1: Desarrollo de un servidor web simplificado</h2>
+                <h2>Docente: Fabio Gabriel Salerno</h2>
+            </div>
+            
+            <div class="content-subinformacion">
+                <h2>Integrantes</h2>
+                <ul>
+                    <li> <h3>Macarena Belén Garcia Arcija</h3> </li>
+                    <li> <h3>Leiva Mauro</h3> </li>
+                    <li> <h3>Lucas Isaac Soto</h3> </li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="content-work">
+            <h2>Objetivo del Trabajo Practico</h2>
+
+            <p>
+                En este proyecto se nos pidió desarrollar un servidor web simplificado. Dicho servidor web debe respetar la versión 1.0 del protocolo HTTP y seguir la RFC 1945, la cual describe el funcionamiento de esta versión del protocolo.
+            </p> 
+            
+            <p>
+                El servidor tiene que aceptar peticiones de tipo GET o HEAD, en caso de una petición diferente a las anteriormente mencionadas el servidor envía un mensaje (501 Not Implemented). También implementa los siguientes códigos de estado:
+            </p>
+
+            <ul>
+                <li>200 "OK".</li>
+                <li>400 "Bad Request".</li>
+                <li>404 "Not Found".</li>
+                <li>501 "Not Implemented".</li>
+            </ul>
+
+            <p>
+                Todas las peticiones del cliente y respuestas del servidor se imprimen en la consola del servidor para llevar un registro visual de su funcionamiento.
+            </p>  
+            
+            <p>
+                A su vez, tiene que ser capaz de  procesar los siguientes tipos MIME:
+            </p>  
+            
+            <ul>
+                <li>Extencion objeto ➡ Tipo MIME</li>
+                <li>.htm .html ..........➡  text/html</li>
+                <li>.txt .....................➡ text/plain</li>
+                <li>.gif .....................➡ image/gif </li>
+                <li>.jpg .jpeg ...........➡ image/jpeg</li>
+                <li>.pdf ...................➡ application/pdf </li>
+                <li>* .......................➡ aplication/octet-stream</li>
+            </ul>
+                        
+            <p> 
+                Nota: el tipo MIME "aplication/octet-stream" se utiliza para devolver cualquier otro tipo de extensión que no ha sido contemplada en el resto de tipos MIME.
+                Para el desarrollo del servidor se utilizó como referencia el proyecto "passeidireto - httpServer - Redes de computadores".
+            </p>
+        </div>
+        
+        <div class="vinculos">
+            <hr>
+            <h2> Contenidos relacionados </h2>
+            
+            <ul>
+                <li> <a href="./funciones-servidor.html">Funciones del servidor</a> </li>
+                <li> <a href="./funciones-servicio.html">Funciones del servicio</a> </li>
+                <li> <a href="./estructuras-includes.html">Estructuras, Includes y define</a> </li>
+            </ul>
+
+        </div>
+
+    </body>
+</html>

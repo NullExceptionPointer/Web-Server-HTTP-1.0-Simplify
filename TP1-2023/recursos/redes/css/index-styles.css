@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body  {
+    width: 100%;
+    min-height: 100vh;
+    border-left: 25px solid rgb(84, 169, 255);
+    border-right: 25px solid rgb(84, 169, 255);
+}
+
+.content-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-informacion {
+    width: 100%;
+    padding: 50px 20px;
+    background-color: rgb(50, 54, 58);
+    color: rgb(190, 190, 190);
+}
+.container-informacion h2 {
+    color: rgb(194, 110, 110);
+    font-size: 1.8rem;
+    text-align: start;
+}
+.content-subinformacion h2 {
+    margin-top: 25px;
+    color: rgb(116, 116, 116);
+}
+
+.content-work, .vinculos {
+    padding: 50px 20px;
+    margin-bottom: 0;
+}
+
+/*  FUNCIONES  */
+
+.functions {
+    padding: 20px 0;
+}
+
+.functions h3 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 50px;
+    text-align: start;
+    text-decoration: underline;
+    color: rgb(159, 19, 0);
+}
+
+.functions p b {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 53, 26);
+}
+
+.functions p {
+    margin-top: 10px;
+    margin-left: 100px;
+
+}
+
+.title {
+    text-align: center;
+    background-color: rgb(26, 31, 35);
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.functions-indice {
+    margin-left: 50px;
+}
+
+
+/*  ESTRUCTURAS  */
+
+.struct {
+    padding: 20px 0;
+}
+
+.struct h3 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 50px;
+    text-align: start;
+    text-decoration: underline;
+    color: rgb(159, 19, 0);
+}
+
+.struct pre {
+    color: rgb(255, 53, 26);
+}
+
+.struct p {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+/*  cabeceras  */
+
+.headers b {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 53, 26);
+    margin-bottom: 15px;
+}
+
+.headers p {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.headers p span {
+    color: rgb(220, 179, 124);
+}
+
+.headers h3 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 50px;
+    text-align: start;
+    text-decoration: underline;
+    color: rgb(159, 19, 0);
+}
+
+/*  LINK Y LISTAS  */
+
+ul {
+    margin: 20px 0;
+    padding-left: 50px;
+}
+
+li {
+    padding: 3px;
+}
+
+a, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: rgb(0, 140, 255);
+}

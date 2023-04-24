@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Trabajo Practico 1 Servidor Web Simplificad"/>
+        <meta name="robots" content="follow"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Estructuras, includes y defines</title>
+        <link rel="stylesheet" href="./css/index-styles.css">
+    </head>
+
+    <body>
+        
+        <h1 class="title">Estructuras</h1>
+        
+        <div class="struct">
+            <h3>Host</h3>
+            <p>
+                Estructura utilizada para almacenar un socket junto a su dirección destino
+            </p>
+            <pre>
+                typedef struct{
+                    int socket;
+                    struct sockaddr_in destino;
+                }Host
+            </pre>
+        </div>
+        
+        <div class="struct">
+            <h3>Request</h3>
+            <p>
+                Estructura utilizada para organizar la petición de un cliente, haciendo la división del path "directorio" + protocolo + versión
+            </p>
+            <pre>
+                typedef struct{
+                    char line[MAXBUF];
+                    char metodo[10];
+                    char recurso[1000];
+                    char protocolo[20];
+                }Request
+            </pre>
+        </div>
+
+        <div class="struct">
+            <h3>CR_returns</h3>
+            <p>
+                Estructura utilizada para guardar los returns de la función checkRequest.
+            </p>
+            
+            <p> Esta estructura tiene información sobre directorio del archivo local, código de respuesta del servidor, el código y mensaje motivo y una subestructura que comprueba el estado de los archivos.
+            </p>
+            <pre>
+                typedef struct{
+                    char dir[MAXBUF];
+                    struct stat statBuffer
+                    int n;
+                    int codigo;
+                    char msj_codigo[20];
+                }CR_returns
+            </pre>
+        </div>
+
+        <h1 class="title">Defines e includes</h1>
+
+        <div class="headers">
+            <h3>INCLUDES</h3>
+            <p>
+                #include < stdio.h>  <br>
+                #include < stdlib.h> <br>
+                #include < string.h> <br>
+                #include < ctype.h>  <br>
+                #include < time.h>   <br>
+                #include < sys/stat.h><span>/* Biblioteca para utilizar la struct stat para verificacion de archivos*</span> <br>
+                #include < fcntl.h><span>/* Biblioteca para utilizar la funcion open*/ </span> <br>
+                #include < sys/socket.h><span>/* Biblioteca que contienen las definiciones de sockets*</span> <br>
+                #include < sys/wait.h><span>/* Biblioteca para utillizar la funcion waitpid() */</span> <br>
+                #include < sys/types.h><span>/* Biblioteca que contienen los tipos de socket */</span> <br>
+                #include < arpa/inet.h><span>/* Biblioteca que contienen funciones referentes a inet (Red) */</span> <br>
+                #include < unistd.h><span>/* Biblioteca que contiene varios comandos *NIX */</span> <br>
+                #include < stdbool.h><span>/* Para usar booleanos*/  </span> <br>
+                #include < signal.h><span>/* Biblioteca para utilizar funciones de signal.*</span> <br>
+    
+                <br>
+            </p>
+            <h3>DEFINICINES</h3>
+            <p>
+                <b>Parametros utilizados por el programa</b>    <br>
+                #define SERVERNAME  "WebServer" <span>/* Nombre del server*/ </span><br>
+                #define PUERTO       (8000) <span>/* Puerto utilizada por el server*/ </span><br>
+                #define PROTOCOLO   "HTTP/1.0" <span>/* Protocolo HTTP (version)*/ </span><br>
+                #define PENDIENTES  (1024) <span>/* Tamaño maximo de conexiones pendientes*/ </span><br>
+                #define MAXBUF      (4096) <span>/* Tamaño maximo de buffer*/                <br>                 </span>    
+                #define RFC1123     "%a, %d %b %Y %H:%M:%S GMT" <span>/* Formato de hora para cabecera*/  </span><br>
+    
+                <b>PATH a archivos comunes</b><br>
+                #define DIR_TP      "./recursos"    <br>
+                #define ERR400      "./recursos/redes/error400.html" <br>
+                #define ERR404      "./recursos/redes/error404.html" <br>
+                #define ERR501      "./recursos/redes/error501.html" <br>
+            </p>
+        </div>
+        <div class="vinculos">
+            <hr>
+            <h2> Contenidos relacionados </h2>
+            <ul>
+                <li> <a href="./index.html">Pagina de inicio</a> </li>
+                <li> <a href="./funciones-servidor.html">Funciones del servidor</a> </li>
+                <li> <a href="./funciones-servicio.html">Funciones del servicio</a> </li>
+            </ul>
+        </div>
+
+    </body>
